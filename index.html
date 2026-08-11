@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+    <meta name="theme-color" content="#f7f2e8" />
+    <title>POPPIN' — 10秒タップゲーム</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <p class="eyebrow">10 SECOND TAP GAME</p>
+        <h1>POPPIN<span aria-hidden="true">'</span></h1>
+      </header>
+
+      <section class="scoreboard" aria-label="ゲーム状況">
+        <div class="stat">
+          <span class="stat__label">SCORE</span>
+          <strong id="score" class="stat__value" aria-live="polite">00</strong>
+        </div>
+        <div class="stat stat--right">
+          <span class="stat__label">TIME</span>
+          <strong class="stat__value"><span id="time" aria-live="polite">10</span><small>s</small></strong>
+        </div>
+      </section>
+
+      <section id="game-area" class="game-area" aria-label="タップエリア">
+        <div id="intro" class="panel">
+          <p class="panel__icon" aria-hidden="true">●</p>
+          <h2>丸を見つけて<br />タップ！</h2>
+          <p>10秒でいくつ押せる？</p>
+          <button id="start-button" class="action-button" type="button">START</button>
+        </div>
+
+        <button id="target" class="target" type="button" aria-label="丸をタップ" hidden></button>
+
+        <div id="result" class="panel" hidden>
+          <p class="panel__overline">TIME'S UP!</p>
+          <h2>スコア <span id="final-score">0</span></h2>
+          <p id="result-message">ナイスタップ！</p>
+          <button id="retry-button" class="action-button" type="button">RETRY</button>
+        </div>
+      </section>
+
+      <footer>FIND IT. TAP IT. POP IT.</footer>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
