@@ -23,13 +23,13 @@ function shuffle<T>(items: T[], g: { rng: number }) {
   }
   return items;
 }
-export function rotate(board: Color[], row: number, col: number) {
+export function rotate<T>(board: readonly T[], row: number, col: number): T[] {
   if (!Number.isInteger(row) || !Number.isInteger(col) || row < 0 || col < 0 || row > 4 || col > 4) throw new Error('4枚の範囲を選んでください');
   const b = board.slice(), a = row * SIZE + col;
   b[a] = board[a + SIZE]; b[a + 1] = board[a]; b[a + SIZE + 1] = board[a + 1]; b[a + SIZE] = board[a + SIZE + 1];
   return b;
 }
-export function matches(board: Color[]) {
+export function matches(board: readonly (Color | null)[]) {
   const found = new Set<number>();
   for (let r = 0; r < 5; r++) for (let c = 0; c < 5; c++) {
     const a = r * SIZE + c, v = board[a];
